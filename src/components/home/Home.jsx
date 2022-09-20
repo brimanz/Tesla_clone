@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Section from '../section/Section';
 
 const Home = () =>{
 	return(
-		<Container>Hola desde home</Container>
+		<Container>
+			<Section/>
+		</Container>
 	);
 }
 

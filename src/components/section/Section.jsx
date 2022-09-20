@@ -4,7 +4,9 @@ import styled from 'styled-components';
 
 const Section = () =>{
 	return(
-		<Container>Hola desde Section</Container>
+		<Wrap>
+			
+		</Wrap>
 	);
 }
 
@@ -12,7 +14,10 @@ const Section = () =>{
 export default Section;
 
 
-const Container = styled.div`
+const Wrap = styled.div`
+	width: 100vw;
 	height: 100vh;
+
+	background-image: url('./assets/model-s.jpg');
 `
 
