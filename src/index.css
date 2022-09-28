@@ -2,8 +2,8 @@
 :root{
 	--color-grey: #393c41;
 	--color-black: #414345;
+	--color-white: #f5f5f5;
 }
-
 
 *{
 	margin: 0;
@@ -14,5 +14,19 @@
 
 body{
 	width: 100%;
+}
+
+@keyframes animationDown{
+	0%, 20%, 50%, 80%, 100%{
+		transform: translateY(0);
+	}
+
+	40%{
+		transform: translateY(6px);
+	}
+
+	60%{
+		transform: translateY(4px);
+	}
 }
 
