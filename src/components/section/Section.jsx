@@ -1,31 +1,38 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
+import Fade from 'react-reveal/Fade';
+
 
 
 const Section = ({title, subtitle, backgroundImg, leftBtnText, rightBtnText}) =>{
 	return(
 		<Wrap bgImage={backgroundImg}>
-			<ItemText>
 
-				<h1>{title}</h1>
+			<Fade bottom>
+				<ItemText>
 
-				<p>{subtitle}</p>
-			</ItemText>
+					<h1>{title}</h1>
+
+					<p>{subtitle}</p>
+				</ItemText>
+			</Fade>
 
 			<Buttons>
-				<ButtonGroup>
-					<LeftButton>{leftBtnText}</LeftButton>
+				<Fade bottom>
+					<ButtonGroup>
+						<LeftButton>{leftBtnText}</LeftButton>
 
-					{rightBtnText && 
-						<RightButton>
-							{rightBtnText}
-						</RightButton>
-					}
-					
-				</ButtonGroup>
-
+						{rightBtnText && 
+							<RightButton>
+								{rightBtnText}
+							</RightButton>
+						}
+						
+					</ButtonGroup>
+				</Fade>
 				<DownArrow src="/images/down-arrow.svg"/>
 			</Buttons>
+			
 		</Wrap>
 	);
 }
@@ -59,7 +66,7 @@ const ButtonGroup = styled.div`
 	display: flex;	
 	margin-bottom: 3.5rem;
 
-	@media (max-width: 768px){
+	@media(max-width: 768px){
 		flex-direction: column;
 	}
 `
@@ -80,12 +87,23 @@ const LeftButton = styled.div`
 	font-size: 1.1rem;	
 	cursor: pointer;
 	margin: .8rem;
+
+	:hover{
+		background-color: var(--color-white);		
+		color: var(--color-grey);	
+	}
+
 `
 
 const RightButton = styled(LeftButton)`
 	background-color: var(--color-white);
 	opacity: .65;
 	color: var(--color-grey);
+
+	:hover{
+		background-color: var(--color-grey);		
+		color: var(--color-white);	
+	}
 	
 `
 
