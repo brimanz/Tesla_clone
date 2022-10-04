@@ -1,16 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from '@emotion/styled';
+
 import MenuIcon from '@mui/icons-material/Menu';
+import ClearIcon from '@mui/icons-material/Clear';
+
+import {selectCars} from '../../features/car/carSlice';
+import {useSelector} from 'react-redux';
 
 
 const Header = () =>{
+
+	const [burgerStatus, setBurgerStatus] = useState(false);
+	const cars = useSelector(selectCars);
+	console.log(cars);
+
+
 	return(
 		<Container>
 			<a>
 				<img src="/images/logo.svg" alt="logo image"/>
 			</a>
 
-			<Menu>				
+			<Menu>
 				<a href="#">Model S</a>
 				
 				<a href="#">Model Y</a>
@@ -25,10 +36,14 @@ const Header = () =>{
 
 				<a href="#">Tesla Account</a>
 
-				<CustomMenu/>
+				<CustomMenu onClick={() => setBurgerStatus(true)}/>
 			</RightMenu>
 
-			<BurgerNav>
+			<BurgerNav show={burgerStatus}>
+				<CloseWrapper>
+					<Customclose onClick={() => setBurgerStatus(false)}/>
+				</CloseWrapper>
+
 				<li>
 					<a href="!#">Existing Inventory</a>
 				</li>
@@ -91,7 +106,7 @@ const Menu = styled.div`
 	}
 
 
-	@media(max-width: 768px){
+	@media(max-width: 880px){
 		display: none;
 	}	
 `
@@ -119,7 +134,34 @@ const BurgerNav = styled.div`
 
 	background-color: var(--color-white);
 	width: 28rem;
+	z-index: 16;
+	list-style: none;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	text-align: start;
+	transform: ${props => props.show ? "translateX(0)" : "translateX(100%)"};
+	transition: transform 0.3s ease-in;
+
+	li{
+		padding: 1.2rem 0;
+		border-bottom: 1px solid var(--color-grey);
+
+		a{
+			font-weight: 600;
+		}
+
+	}
 `
 
+const Customclose = styled(ClearIcon)`
+	cursor: pointer;
+`
+
+const CloseWrapper = styled.div`
+	display: flex;
+	justify-content: flex-end;
+
+`
 
 

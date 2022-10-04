@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 import Fade from 'react-reveal/Fade';
 
 
-
 const Section = ({title, subtitle, backgroundImg, leftBtnText, rightBtnText}) =>{
 	return(
 		<Wrap bgImage={backgroundImg}>
@@ -72,7 +71,7 @@ const ButtonGroup = styled.div`
 `
 
 const LeftButton = styled.div`
-	width: 25.6rem;
+	width: 22.6rem;
 	height: 4rem;
 	
 	background-color: var(--color-grey);		
