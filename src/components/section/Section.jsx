@@ -59,6 +59,17 @@ const Wrap = styled.div`
 const ItemText = styled.div`
 	padding-top: 15vh;
 	text-align: center;
+
+	@media(max-width: 420px){
+		h1{
+			font-size: 1.5rem;
+		}
+
+		p{
+			font-size: 0.9rem;
+		}
+	}
+
 `
 
 const ButtonGroup = styled.div`
@@ -91,6 +102,11 @@ const LeftButton = styled.div`
 		background-color: var(--color-white);		
 		color: var(--color-grey);	
 	}
+
+	@media(max-width: 420px){
+		width: 18rem;
+		height: 3.4rem;
+	}	
 
 `
 

@@ -88,6 +88,14 @@ const Container = styled.div`
 	left: 0;
 	right: 0;
 	z-index: 1;	
+
+	@media(max-width: 420px){
+		a{
+			img{
+				width: 4.88rem
+			}
+		}
+	}
 `
 
 const Menu = styled.div`
@@ -102,10 +110,10 @@ const Menu = styled.div`
 		flex-wrap: nowrap;
 	}
 
-
 	@media(max-width: 880px){
 		display: none;
 	}	
+
 `
 
 const RightMenu = styled.div`
@@ -114,9 +122,14 @@ const RightMenu = styled.div`
 
 	a{
 		font-weight: 600;
-		margin-right: 1.1rem;
+		margin-right: 0.7rem;
 		flex-wrap: nowrap;
 	}
+
+	@media(max-width: 420px){
+		font-size: 0.95rem;
+	}
+
 `
 
 const CustomMenu  = styled(MenuIcon)`
@@ -139,6 +152,10 @@ const BurgerNav = styled.div`
 	text-align: start;
 	transform: ${props => props.show ? "translateX(0)" : "translateX(100%)"};
 	transition: transform 0.3s ease-in;
+
+	@media(max-width: 420px){
+		width: 100%;
+	}
 
 	li{
 		padding: 1.2rem 0;
